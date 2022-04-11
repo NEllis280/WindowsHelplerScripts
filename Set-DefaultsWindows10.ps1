@@ -13,10 +13,10 @@ Set-ItemProperty -path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search' 
 
 # Hide people bar
 New-Item -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People'
-New-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People' -name 'PeopleBand' -value '0'
+New-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\People' -Name 'PeopleBand' -value '0'
 
 # Stop OneDrive from starting with Windows
-Remove-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -name 'onedrive'
+Remove-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -Name 'onedrive'
 
 # Turn off Suggested Content
 Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager' -Name 'SubscribedContent-338389Enabled' -Value 0
@@ -24,11 +24,11 @@ Set-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentD
 New-ItemProperty -Path 'HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager' -Name 'SubscribedContent-338388Enabled' -Value 0
 
 # Remove Edge from "Open With" dialog for pdf files. Also stops Edge from taking over default file associations for pdf files.
-New-ItemProperty -path 'HKCU:\Software\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723' -name 'NoOpenWith'
-New-ItemProperty -path 'HKCU:\Software\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723' -name 'NoStaticDefaultVerb'
+New-ItemProperty -path 'HKCU:\Software\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723' -Name 'NoOpenWith'
+New-ItemProperty -path 'HKCU:\Software\Classes\AppXd4nrz8ff68srnhf9t5a8sbjyar1cr723' -Name 'NoStaticDefaultVerb'
 
 # Remove Edge Desktop Shortcut
 Remove-Item -Path "$env:USERPROFILE\Desktop\Microsoft Edge.lnk"
 
 # Remove Tak View Button from Taskbar
-Set-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -name 'ShowTaskViewButton' -value '0' -Type 'DWORD'
+Set-ItemProperty -path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' -Name 'ShowTaskViewButton' -value '0' -Type 'DWORD'
