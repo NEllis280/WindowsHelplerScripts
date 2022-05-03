@@ -26,7 +26,6 @@ foreach ($files in $tempFiles)
     {
         Remove-Item $files.FullName -Recurse -Force
     }
-
 }
 
 #Chrome cleanup portion
