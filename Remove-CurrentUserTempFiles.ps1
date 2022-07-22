@@ -19,7 +19,7 @@ foreach ($file in $tempFiles)
 {
     if ($file.LastWriteTime -lt $lastWrite)
     {
-        Remove-item $file.FullName -Recurse -Force
+        Remove-item $file.FullName -Recurse -Force -ErrorAction SilentlyContinue
     }
 }
 
@@ -31,6 +31,6 @@ foreach ($item in $items)
 {
     if (Test-Path "$folder\$item")
     {
-        Remove-Item "$folder\$item" -Recurse -Force
+        Remove-Item "$folder\$item" -Recurse -Force -ErrorAction SilentlyContinue
     }
 }

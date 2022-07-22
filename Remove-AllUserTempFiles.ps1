@@ -23,7 +23,7 @@ foreach ($user in $users)
     {
         if ($files.LastWriteTime -lt $lastWrite)
         {
-            Remove-Item $files.FullName -Recurse -Force
+            Remove-Item $files.FullName -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
 
@@ -35,7 +35,7 @@ foreach ($user in $users)
     {
         if (Test-Path "$chromeFolder\$item")
         {
-            Remove-Item "$chromeFolder\$item" -Recurse -Force
+            Remove-Item "$chromeFolder\$item" -Recurse -Force -ErrorAction SilentlyContinue
         }
     }
 }
